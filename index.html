@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accessibility testing</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>Accessibility testing</h1>
    <nav id="navbar">
-    <header>Accessibility testing</header>
+    <header><h2>Topics:</h2></header>
     <ul>
         <li>
             <a class="nav-link" href="#What_Is_Accessibility_Testing">What Is Accessibility Testing</a>
@@ -26,14 +28,13 @@
             <a class="nav-link" href="#Manual_Method">Manual Method</a>
         </li>
         
-    </ul>
+    </ul>    
    </nav>
         
-    <main id="main-doc">
-        
-        <section class="main-section" 
-        id="What_Is_Accessibility_Testing">
+    <main id="main-doc">                
+        <section class="main-section" id="What_Is_Accessibility_Testing">
             <header>What Is Accessibility Testing</header>
+
             <p>Accessibility testing is the practice of making your web and mobile apps usable to as many people as possible. It makes apps accessible to those with disabilities, such as vision impairment, hearing disabilities, and other physical or cognitive conditions.
 
                 Often, accessibility testing is not performed in the software development cycle due to a lack of automation, or lower priority.
@@ -41,8 +42,7 @@
                 Accessibility testing is just as important as any other function or performance of an app or website. To make accessibility testing more efficient and sustainable, you need to shift it left and automate it. 
             </p>
         </section>
-        <section class="main-section" 
-        id="Why_Accessibility_Testing_Is_a_Necessity">
+        <section class="main-section" id="Why_Accessibility_Testing_Is_a_Necessity">
             <header>Why Accessibility Testing Is a Necessity</header>
             <p>
                 You need accessibility testing to meet the needs of all users. It’s also the law. Between the Web Content Accessibility Guidelines (WCAG), Section 508, and the Americans With Disabilities Act (ADA), you have plenty of regulations to meet. Failure to do so could result in fines of $75,000-$150,000.
@@ -85,6 +85,41 @@
         </section>
         <section class="main-section" id="Manual_Method">
             <header>Manual Method</header>
+            <p>Here are a few points to check:</p>
+            <h3>Text alternatives for non-text content must be provided.</h3>            
+            <ul>
+                <li> <p>Images, form image buttons, and image map hot spots have appropriate, equivalent alternative text.</p>
+                 <code>
+                    &ltimg src="" alt=""&gt
+                    </code>
+                </li>
+                <li> <p>Form inputs have associated text labels.</p>
+                    <div>
+                        <label for="name">Name</label>
+                        <input id="name" type="text" aria-autocomplete="name">
+                    </div>
+                    <br>
+                    <code>
+                        &ltlabel for="name"&gtName&lt/label&gt
+                        &ltinput id="name" type="text" aria-autocomplete="name"&gt
+                    </code>
+                </li>
+                <li>
+                    <p>Screen readers announce the nested text for <code>&ltbutton&gt</code> elements,
+                         and the <code>value</code> attribute for input buttons. Form buttons must never be empty.</p>
+                         <br>
+                         <div>
+                            <input type="submit" name="submit" value="Submit Search">
+                            <input type="reset" name="reset" value="Reset">
+                            <button>Activate</button>
+                         </div>
+<br>
+<code>&ltinput type="submit" name="submit" value="Submit Search"&gt
+    
+    &ltinput type="reset" name="reset" value="Reset"&gt
+    &ltbutton>Activate&lt/button&gt</code>
+                </li>
+            </ul>
         </section>
     </main>
     
